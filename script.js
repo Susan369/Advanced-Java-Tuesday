@@ -1,97 +1,49 @@
+//Write a function
+//looks for elements between a and b
+//returns an array
+// return the new array
 
-// Write the destructuring assignment that reads:
+function filterRange(arr1, a, b) {
+    // added brackets around the expression for better readability
+    return arr1.filter(item => (a <= item && item <= b));
+  }
+let arr1 = [5, 3, 8, 1]
+let filtered = filterRange(arr1, 1, 4)
 
-// name property 
-// years property
-//(false if absent)
+  
+  //alert( filtered ); // 3,1 (matching values)
+  
+  //alert( arr ); // 5,3,8,1 (not modified)
 
-let user1 ={
-    name:"John",
-    years:30
+  console.log(filtered)
+  console.log(arr1)
+
+
+  //converts it into an array of names
+
+let john1 = { name: "John", age: 25 };
+let pete1 = { name: "Pete", age: 30 };
+let mary1 = { name: "Mary", age: 28 };
+
+let users = [ john1, pete1, mary1 ];
+
+let names = users.map(item => item.name);
+
+//alert( names ); // John, Pete, Mary
+console.log(names)
+
+//Write the function
+// getAverageAge(users
+
+function getAverageAge(users) {
+  return users.reduce((prev, user) => prev + user.age, 0) / users.length;
 }
 
-let { name, years: age, isAdmin = false } = user;
-  
-  console.log(user);
+let john2 = { name: "John2", age: 25 };
+let pete2 = { name: "Pete2", age: 30 };
+let mary2 = { name: "Mary2", age: 29 };
 
-  //Give the right name:
-  //variable with name of plnet
-  //variable to store a visitor name
+let arr2 = [ john2, pete2, mary2 ];
 
-  const ourPlanet = "Mother";
-  let currentVisitor = "user";
-  
-  console.log(ourPlanet);
-  console.log(currentVisitor);
-
-  //exersice 3
-
-  let phrase = "Hello"
-
-if (true) {
-  let user = "John";
-  function sayHi() {
-    alert(`${phrase}, ${user}`)
-  }
-}
-sayHi();
-
-//the answer is Hello, John . because its true, and an alert.
-
-//exersice 4
-//one line code
-//create an empty object user
-//add property name and value
-//surname=smith
-//change name to Pete
-//remove property name from the object
-
-const userA = {};
-userA.name = 'John';
-userA.surname = 'Smith';
-console.log(userA);
-
-userA.name = 'Pete';
-console.log(userA);
-
-delete userA.name;
-console.log(userA);
-
-//Exercise 5
-//change const object
-const user = {
-    name: "John"
-  }
-  
-  // does it work? no because its a constant
-  user.name = "Pete"
-
-  //6
-  //sum alaries
-  //store in variable
-  //if
-
-
-const sumValues = Object =>Object. values(Object).reduce((a,b) => a + b, O);
-console.log(sum);
-
-//7
-//ternary operator
-
-let a = 3;
-let b = 6;
-
-const result = a + b < 6 ?: "Below" : "Over";
-console.log(result);
-
-//8
-
-
-
-let message = (login == 'Employee') ? 'Hello' :
-  (login == 'Director') ? 'Greetings' :
-  (login == '') ? 'No login' :
-  '';
-
-  
-  
+//alert( getAverageAge(arr2) ); // 28
+console.log(getAverageAge(arr2))
